@@ -3,77 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CitasMundial - Encuentra el amor</title>
+    <title>CitasMundial | Encuentra el amor en Telegram</title>
+    <meta name="description" content="Únete a CitasMundial, el bot de citas en Telegram donde encontrarás personas reales de todo el mundo. Sin bots, sin perfiles falsos. ¡Regístrate gratis!">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #121212; color: #ffffff; overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background-color: #0d0d0d; color: #ffffff; overflow-x: hidden; line-height: 1.6; }
+        
+        /* Colores y utilidades */
         .gradient-text { background: linear-gradient(45deg, #ff4b8b, #9b51e0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; text-align: center; }
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle at top, #2a103c 0%, #121212 70%); }
-        .hero h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; color: #b3b3b3; margin-bottom: 40px; max-width: 600px; }
-        .btn { display: inline-block; padding: 15px 40px; font-size: 1.2rem; font-weight: 600; text-decoration: none; border-radius: 30px; transition: transform 0.3s, box-shadow 0.3s; margin: 10px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; text-align: center; }
+        .btn { display: inline-block; padding: 15px 40px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 30px; transition: transform 0.3s, box-shadow 0.3s; margin: 10px; cursor: pointer; }
         .btn-primary { background: linear-gradient(45deg, #ff4b8b, #9b51e0); color: white; box-shadow: 0 4px 15px rgba(255, 75, 139, 0.4); }
         .btn-secondary { background: #1e1e1e; color: white; border: 1px solid #333; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 75, 139, 0.6); }
-        section { padding: 80px 20px; }
-        .section-title { font-size: 2.2rem; margin-bottom: 50px; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .feature-card { background: #1e1e1e; padding: 30px; border-radius: 20px; border: 1px solid #2a2a2a; transition: transform 0.3s; }
-        .feature-card:hover { transform: translateY(-10px); border-color: #ff4b8b; }
-        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; }
-        .feature-card h3 { margin-bottom: 10px; color: #ffffff; }
-        .feature-card p { color: #888; font-size: 0.95rem; }
-        .modelos-box { background: linear-gradient(135deg, rgba(255, 75, 139, 0.1), rgba(155, 81, 224, 0.1)); border: 1px solid #ff4b8b; border-radius: 20px; padding: 40px 20px; margin-top: 40px; }
-        .modelos-box h2 { margin-bottom: 20px; }
-        .modelos-box p { color: #ccc; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        footer { text-align: center; padding: 30px; color: #666; border-top: 1px solid #222; font-size: 0.9rem; }
+
+        /* Hero Section */
+        .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle at top, #2a103c 0%, #0d0d0d 70%); padding: 60px 20px; }
+        .hero h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; color: #b3b3b3; margin-bottom: 40px; max-width: 700px; }
+
+        /* Secciones generales */
+        section { padding: 80px 20px; border-bottom: 1px solid #1a1a1a; }
+        .section-title { font-size: 2.2rem; margin-bottom: 15px; }
+        .section-subtitle { font-size: 1.1rem; color: #888; margin-bottom: 50px; }
+
+        /* Tarjetas (Grid) */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: #161616; padding: 35px 25px; border-radius: 20px; border: 1px solid #2a2a2a; transition: transform 0.3s, border-color 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: #ff4b8b; }
+        .card-icon { font-size: 3rem; margin-bottom: 15px; }
+        .card h3 { margin-bottom: 10px; font-size: 1.3rem; }
+        .card p { color: #999; font-size: 0.95rem; }
+
+        /* Sección VIP */
+        .vip-box { background: linear-gradient(135deg, rgba(255, 75, 139, 0.1), rgba(155, 81, 224, 0.1)); border: 1px solid #9b51e0; border-radius: 20px; padding: 50px 20px; }
+        .vip-list { list-style: none; text-align: left; max-width: 600px; margin: 30px auto; }
+        .vip-list li { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; }
+        .vip-list li span { margin-right: 15px; font-size: 1.5rem; }
+
+        /* Sección Modelos */
+        .models-box { background: #1a1a1a; border-left: 5px solid #ff4b8b; border-radius: 10px; padding: 40px; margin-top: 40px; text-align: left; }
+        .models-box h2 { margin-bottom: 20px; color: #ff4b8b; }
+        .models-box p { color: #ccc; margin-bottom: 20px; }
+
+        /* FAQ */
+        .faq-item { background: #161616; margin-bottom: 15px; border-radius: 10px; padding: 20px; text-align: left; }
+        .faq-item h4 { color: #ff4b8b; margin-bottom: 10px; font-size: 1.1rem; }
+        .faq-item p { color: #999; font-size: 0.95rem; }
+
+        footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; background: #090909; }
     </style>
 </head>
 <body>
 
+    <!-- HERO -->
     <div class="hero container">
         <h1>Encuentra a alguien <br><span class="gradient-text">en todo el mundo</span> 🌍</h1>
-        <p>Conecta con personas reales, sin bots ni perfiles falsos. Tú decides quién te habla.</p>
+        <p>La comunidad de citas en Telegram donde las conexiones son reales. Sin bots, sin perfiles falsos y con total privacidad. Tú tienes el control.</p>
         <div>
-            <a href="https://t.me/CitasMundialBot" class="btn btn-primary">🚀 Abrir el Bot</a>
+            <a href="https://t.me/CitasMundialBot" class="btn btn-primary">🚀 Abrir el Bot Gratis</a>
             <a href="https://t.me/citasmundialofficial" class="btn btn-secondary">📢 Unirse al Canal</a>
         </div>
     </div>
 
+    <!-- CÓMO FUNCIONA -->
     <section class="container">
-        <h2 class="section-title gradient-text">¿Cómo funciona?</h2>
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">📝</div>
-                <h3>Crea tu perfil</h3>
-                <p>Regístrate en segundos con tus fotos y cuenta de quién eres.</p>
+        <h2 class="section-title gradient-text">¿Cómo empezar?</h2>
+        <p class="section-subtitle">Encontrar a tu match ideal es cuestión de segundos.</p>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>1. Crea tu perfil</h3>
+                <p>Regístrate en el bot de Telegram con tus fotos, edad y país. Es 100% gratis y rápido.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Explora</h3>
-                <p>Usa /buscar para ver perfiles de personas de todo el mundo.</p>
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h3>2. Explora y descubre</h3>
+                <p>Usa el comando /buscar para ver perfiles de personas de todo el mundo que buscan lo mismo que tú.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">💘</div>
-                <h3>Haz Match</h3>
-                <p>Si hay conexión, se abre el chat. ¡Tú tienes el control!</p>
+            <div class="card">
+                <div class="card-icon">💘</div>
+                <h3>3. Haz Match</h3>
+                <p>Si a los dos les gusta, se abre el chat privado. Tú decides quién te habla y a quién ignorar.</p>
             </div>
         </div>
     </section>
 
+    <!-- FUNCIONES VIP -->
     <section class="container">
-        <div class="modelos-box">
+        <div class="vip-box">
+            <h2 class="section-title">💎 CitasMundial VIP Premium</h2>
+            <p class="section-subtitle">Lleva tu experiencia al siguiente nivel con funciones exclusivas.</p>
+            <ul class="vip-list">
+                <li><span>🕵️‍♂️</span> <strong>Detective VIP:</strong> Descubre exactamente quién vio tu perfil y quién te dio like.</li>
+                <li><span>🎯</span> <strong>Predictor de Matches:</strong> Nuestro algoritmo te dice con quién tienes más probabilidades de conectar.</li>
+                <li><span>⭐</span> <strong>Súper Like:</strong> Destaca sobre los demás y llama la atención de tu crush.</li>
+                <li><span>🚀</span> <strong>Boost Diario:</strong> Aparece en los primeros lugares de búsqueda para recibir más visitas.</li>
+            </ul>
+            <a href="https://t.me/CitasMundialBot" class="btn btn-primary">Quiero ser VIP</a>
+        </div>
+    </section>
+
+    <!-- MODELOS -->
+    <section class="container">
+        <div class="models-box">
             <h2>💃 ¿Eres chica y quieres ganar dinero?</h2>
-            <p>En CitasMundial, nuestras Modelos Verificadas ganan dinero real por chatear con usuarios interesados. Tú decides con quién hablar y nosotros te traemos los clientes.</p>
-            <a href="https://t.me/CitasMundialBot" class="btn btn-primary">Quiero ser Modelo VIP</a>
+            <p>En CitasMundial buscamos constantemente nuevas Modelos Verificadas. No necesitas experiencia previa, solo ganas de conocer gente y sacar un beneficio económico.</p>
+            <p><strong>✅ Tú decides con quién hablar.<br>✅ Nosotros te traemos a los clientes.<br>✅ Ganas el 50% de todo lo que generes.</strong></p>
+            <a href="https://t.me/CitasMundialBot" class="btn btn-secondary" style="border-color: #ff4b8b; color: #ff4b8b;">Quiero ser Modelo VIP</a>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (SEO) -->
+    <section class="container">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-subtitle">Todo lo que necesitas saber antes de unirte.</p>
+        <div class="faq-item">
+            <h4>¿CitasMundial es gratis?</h4>
+            <p>Sí, registrarte y explorar perfiles es completamente gratis. Tenemos funciones opcionales de pago (como el VIP o el desbloqueo de chats con modelos) para quienes quieran una experiencia más exclusiva.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Es seguro? ¿Hay bots?</h4>
+            <p>Nuestra prioridad es la seguridad. Contamos con un sistema de reportes y un equipo de administración que banea a los usuarios falsos o que incumplen las normas. Queremos conexiones reales.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Necesito descargar una aplicación?</h4>
+            <p>No. Todo el sistema funciona directamente dentro de Telegram, la aplicación de mensajería que ya usas. Solo tienes que abrir nuestro bot y empezar.</p>
         </div>
     </section>
 
     <footer>
         <p>© 2026 CitasMundial. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Hecho con ❤️ para conectar al mundo.</p>
     </footer>
 
 </body>
-      </html>
+</html>
