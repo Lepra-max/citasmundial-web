@@ -32,13 +32,6 @@
         .card h3 { margin-bottom: 10px; font-size: 1.3rem; }
         .card p { color: #999; font-size: 0.95rem; }
 
-        /* Sección de detalles */
-        .detail-section { text-align: left; max-width: 800px; margin: 0 auto; background: #111; padding: 40px; border-radius: 20px; border: 1px solid #222; margin-bottom: 30px; }
-        .detail-section h3 { color: #ff4b8b; font-size: 1.6rem; margin-bottom: 15px; }
-        .detail-section p { color: #ccc; margin-bottom: 15px; }
-        .detail-section ul { margin-left: 20px; margin-bottom: 20px; color: #bbb; }
-        .detail-section li { margin-bottom: 10px; }
-        
         .vip-box { background: linear-gradient(135deg, rgba(255, 75, 139, 0.1), rgba(155, 81, 224, 0.1)); border: 1px solid #9b51e0; border-radius: 20px; padding: 50px 20px; }
         .vip-list { list-style: none; text-align: left; max-width: 600px; margin: 30px auto; }
         .vip-list li { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: flex-start; }
@@ -53,9 +46,6 @@
         .faq-item p { color: #999; font-size: 0.95rem; }
 
         footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; background: #090909; }
-        
-        .back-link { display: inline-block; margin-bottom: 20px; color: #888; text-decoration: none; font-weight: 600; }
-        .back-link:hover { color: #ff4b8b; }
     </style>
 </head>
 <body>
@@ -70,69 +60,26 @@
         </div>
     </div>
 
-    <!-- CÓMO FUNCIONA (ENLACES A ANCLAS) -->
+    <!-- CÓMO FUNCIONA -->
     <section class="container">
         <h2 class="section-title gradient-text">¿Cómo empezar?</h2>
         <p class="section-subtitle">Toca cada tarjeta para leer la explicación detallada.</p>
         <div class="grid">
-            <a href="#explicacion-perfil" class="card">
+            <a href="perfil.html" class="card">
                 <div class="card-icon">📝</div>
                 <h3>1. Crea tu perfil</h3>
                 <p>Regístrate con tus fotos y cuenta quién eres. Toca aquí para ver los comandos.</p>
             </a>
-            <a href="#explicacion-buscar" class="card">
+            <a href="buscar.html" class="card">
                 <div class="card-icon">🔍</div>
                 <h3>2. Explora y descubre</h3>
                 <p>Usa /buscar para ver perfiles de todo el mundo. Toca aquí para más info.</p>
             </a>
-            <a href="#explicacion-match" class="card">
+            <a href="match.html" class="card">
                 <div class="card-icon">💘</div>
                 <h3>3. Haz Match</h3>
                 <p>Si hay conexión, se abre el chat privado. Toca aquí para saber cómo funciona.</p>
             </a>
-        </div>
-    </section>
-
-    <!-- SECCIÓN DE DETALLES (EXPLICACIONES) -->
-    <section class="container" style="padding-top: 20px;">
-        
-        <!-- Detalle 1 -->
-        <div id="explicacion-perfil" class="detail-section">
-            <a href="#" class="back-link">⬅️ Volver arriba</a>
-            <h3>📝 Guía completa: Cómo crear tu perfil</h3>
-            <p>Para empezar a ligar en CitasMundial, lo primero es crear un perfil atractivo. El bot te guiará paso a paso, pero aquí te dejamos los comandos clave:</p>
-            <ul>
-                <li><strong>/registro:</strong> Inicia el proceso. Te pedirá tu nombre, edad, género, qué buscas, tu país y una foto.</li>
-                <li><strong>/perfil:</strong> Una vez registrado, usa este comando para ver cómo se ve tu perfil ante los demás.</li>
-                <li><strong>/editar:</strong> ¿Te equivocaste en algo o quieres cambiar tu foto? Usa este comando para actualizar tu información.</li>
-                <li><strong>/invitar:</strong> Obtén tu enlace único. Si un amigo se registra con él, ¡ambos ganan likes extra!</li>
-            </ul>
-            <p><strong>Tip:</strong> Sube una foto clara y escribe una biografía sincera. Los perfiles completos reciben 3 veces más visitas.</p>
-        </div>
-
-        <!-- Detalle 2 -->
-        <div id="explicacion-buscar" class="detail-section">
-            <a href="#" class="back-link">⬅️ Volver arriba</a>
-            <h3>🔍 Guía completa: Cómo buscar y explorar</h3>
-            <p>La emoción de ver a quién puedes conocer. El bot está diseñado para que veas perfiles uno a uno y decidas si te gustan o no.</p>
-            <ul>
-                <li><strong>/buscar:</strong> Te muestra el siguiente perfil disponible según tus preferencias. Puedes dar ❤️ "Me gusta", 👎 "Pasar", o ⭐ "Súper Like" (si eres VIP).</li>
-                <li><strong>/modelos:</strong> Si quieres ver exclusivamente los perfiles de nuestras Modelos Verificadas (quienes tienen chats de pago), usa este comando.</li>
-                <li><strong>/rebobinar:</strong> (Solo VIP) ¿Le diste "Pasar" a alguien por error? Con este comando recuperas al último perfil que descartaste.</li>
-                <li><strong>/super:</strong> (Solo VIP) Envía un Súper Like. La persona sabrá que te gustó mucho y tendrás más probabilidades de que te responda.</li>
-            </ul>
-        </div>
-
-        <!-- Detalle 3 -->
-        <div id="explicacion-match" class="detail-section">
-            <a href="#" class="back-link">⬅️ Volver arriba</a>
-            <h3>💘 Guía completa: Matches y Chats</h3>
-            <p>Cuando hay conexión mutua, la magia ocurre. Aquí te explicamos qué pasa cuando hay un Match.</p>
-            <ul>
-                <li><strong>/matches:</strong> Revisa la lista de todas las personas con las que has hecho Match. Si quieres, puedes iniciar la conversación desde ahí.</li>
-                <li><strong>Desbloquear chat con Modelo:</strong> Si te gusta una Modelo, puedes pagar 300 Stars para abrir un chat privado con ella. Si ella responde, la conversación fluye.</li>
-                <li><strong>/reportar:</strong> Si alguien te molesta, usa este comando. Nuestro equipo de administración revisará el perfil y, si incumple las normas, será baneado permanentemente.</li>
-            </ul>
         </div>
     </section>
 
